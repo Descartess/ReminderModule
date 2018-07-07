@@ -1,0 +1,40 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "name": "Paul Nyondo",
+      "contact": 256781090374,
+      "type": "Individual",
+      "bottleType": "20L with tap",
+      "quantity": 3,
+      "frequncy": 3,
+      "prev_date": "2nd Nov",
+      "next_date": "5th Nov",
+      "archive": true
+    },
+    {
+      "id": 2,
+      "name": "NyondoTech",
+      "contact": 256781090373,
+      "type": "Company",
+      "bottleType": "20L with tap",
+      "quantity": 10,
+      "frequncy": 3,
+      "prev_date": "2nd Nov",
+      "next_date": "5th Nov",
+      "archive": false
+    },
+    {
+      "id": 3,
+      "name": "Extra solutions",
+      "contact": 256781090375,
+      "type": "Company",
+      "bottleType": "20L with tap",
+      "quantity": 10,
+      "frequncy": 3,
+      "prev_date": "2nd Nov",
+      "next_date": "5th Nov",
+      "archive": false
+    }
+  ]
+}
