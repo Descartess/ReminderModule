@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import customerReducers from './customerReducers'
+import customerReducers from './addCustomerReducers'
 
 const reducers = combineReducers({
   customer: customerReducers
