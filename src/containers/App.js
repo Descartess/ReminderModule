@@ -9,7 +9,7 @@ class App extends Component {
   render() {
     return (
       <div className = "app">
-        <h1>Reminder Module</h1>
+        <h1> Delivery Reminders </h1>
         <Navigation />
         <Main />
       </div>

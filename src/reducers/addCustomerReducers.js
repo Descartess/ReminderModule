@@ -24,6 +24,8 @@ export default (state = INITIAL_STATE, action) => {
       return { ...state, quantity: parseInt(action.payload, 10) }
     case types.CONTACT_CHANGE: 
       return { ...state, contact: action.payload }
+    case types.ADD_CUSTOMER_FULFILLED:
+      return { ...INITIAL_STATE }
     default:
       return { ...state}
   }

@@ -1,16 +1,28 @@
 {
   "customers": [
     {
-      "name": "BBC",
-      "type": "Company",
-      "contact": "134556",
+      "name": "URA",
+      "type": "Household",
+      "contact": "0712423455",
       "frequency": 1,
-      "bottleType": "20L with tap",
+      "bottleType": "18L",
       "archive": false,
-      "quantity": 3,
-      "prev_date": "2018-07-09T07:52:53.441Z",
-      "next_date": "2018-07-10T07:52:53.441Z",
-      "id": 7
+      "quantity": 5,
+      "prev_date": "2018-08-16",
+      "next_date": "2018-08-16T21:00:00.000Z",
+      "id": 1
+    },
+    {
+      "name": "RFUEA",
+      "type": "Business",
+      "contact": "123214354",
+      "frequency": 1,
+      "bottleType": "18L",
+      "archive": false,
+      "quantity": 2,
+      "prev_date": "2018-08-01",
+      "next_date": "2018-08-02T08:06:00.099Z",
+      "id": 2
     }
   ]
 }

@@ -2,7 +2,13 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import moment from 'moment'
+import TextField from '@material-ui/core/TextField'
+import MenuItem from '@material-ui/core/MenuItem'
+import InputLabel from '@material-ui/core/InputLabel'
+import Select from '@material-ui/core/Select'
+import FormControl from '@material-ui/core/FormControl';
 import * as addCustomerActions from '../actions/customerActions'
+import Button from '@material-ui/core/Button'
 
 class AddCustomer extends Component {
   renderModal() {
@@ -20,7 +26,7 @@ class AddCustomer extends Component {
 
     const { addCustomer } = this.props.addCustomerActions
 
-    if (name === "" || contact === "") {
+    if (name === "" || contact === "" || quantity === "") {
       console.log("Invalid data")
     } else {
       const customerData = {
@@ -31,7 +37,7 @@ class AddCustomer extends Component {
         bottleType,
         archive: false,
         quantity,
-        prev_date: moment(),
+        prev_date: moment().format("YYYY-MM-DD"),
         next_date: moment().add(frequency, 'd')
       }
       
@@ -46,31 +52,60 @@ class AddCustomer extends Component {
       bottleTypeChange,
       companyTypeChange,
       quantityChange } = this.props.addCustomerActions
+
+    const { type,frequency, bottleType } = this.props.customer
+
     return (
       <div>
         <form>
-          Name: <br />
-          <input type="text" onChange={nameChange} required /> <br />
-          Type: <br />
-          <select name="" id="" onChange={companyTypeChange}>
-            <option value="Individual">Individual</option>
-            <option value="Company">Company</option>
-          </select><br />
-          Bottle Type: <br />
-          <select name="" id="" onChange={bottleTypeChange}>
-            <option value="18L">18 litres</option>
-            <option value="20L">20 litres</option>
-            <option value="20L with tap">20 litres with tap</option>
-          </select> <br />
-          Frequency <br />
-          <input type="number" onChange={frequencyChange} required /> <br />
-          Quantity <br />
-          <input type="number" onChange={quantityChange} required /> <br />
-          Contact <br />
-          <input type="tel" onChange={contactChange} required /> <br />
-          <button onClick={() => this.onSubmitCustomer()}>
+          <TextField 
+          id="name"
+          label="Name" 
+          onChange={nameChange} required /> <br />
+          <FormControl>
+            <InputLabel htmlFor="buyer-type">Buyer Type</InputLabel>
+            <Select value={type} onChange={companyTypeChange} inputProps={{
+                name: 'Buyer',
+                id: 'buyer-type',
+              }}>
+              <MenuItem value="Household">Household</MenuItem>
+              <MenuItem value="Reseller">Reseller</MenuItem>
+              <MenuItem value="Business">Business</MenuItem>
+            </Select>
+          </FormControl><br />
+          <FormControl>
+            <InputLabel htmlFor="bottle-type">Bottle Type</InputLabel>
+            <Select value={bottleType} onChange={bottleTypeChange} inputProps={{
+                name: 'bottle',
+                id: 'bottle-type',
+              }}>
+              <MenuItem value="18L">18 litres</MenuItem>
+              <MenuItem value="20L">20 litres</MenuItem>
+              <MenuItem value="20L with tap">20 litres with tap</MenuItem>
+            </Select> 
+          </FormControl><br />
+          <TextField
+            id="freq"
+            label="Frequency" 
+            type="number"
+            onChange={frequencyChange}
+            value={frequency}
+            required /> <br />
+          <TextField
+            id="freq"
+            label="Quantity"
+            type="number"
+            onChange={quantityChange}
+            required /> <br />
+          <TextField
+            label="Contact"
+            type="tel" 
+            onChange={contactChange}
+            required />
+            <p style={{margin: 10}}></p>
+          <Button  variant="contained" onClick={() => this.onSubmitCustomer()}>
             Submit
-          </button>
+          </Button>
         </form>
       </div>
     )
